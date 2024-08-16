@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebRTC Call</title>
+</head>
+<body>
+    <h1>WebRTC Call</h1>
+    <button id="startCall">Start Call</button>
+    <button id="stopCall" disabled>Stop Call</button>
+    <div id="transcription"></div>
+    <div id="summary"></div>
+    <audio id="audioPlayer" controls style="display:none;"></audio>
+
+    <script>
+        const socket = new WebSocket('ws://' + window.location.host + '/ws/call/');
+        const audioPlayer = document.getElementById('audioPlayer');
+        let mediaStream;
+        let audioContext;
+        let sourceNode;
+        let processorNode;
+
+        function connectWebSocket() {
+            if (socket && (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING)) {
+                console.log('WebSocket is already connected or connecting.');
+                return;
+            }
+
+            socket = new WebSocket('ws://' + window.location.host + '/ws');
+
+            socket.onopen = function(e) {
+                console.log('WebSocket connection established');
+            };
+
+            socket.onmessage = function(e) {
+                const data = JSON.parse(e.data);
+                switch(data.type) {
+                    case 'transcription':
+                        document.getElementById('transcription').innerHTML += `<p style="color: ${data.color}">${data.text}</p>`;
+                        if (data.audio_file_path) {
+                            playAudio(data.audio_file_path);
+                        }
+                        break;
+                    case 'summary':
+                        document.getElementById('summary').innerHTML = `<h2>Summary</h2><p>${data.summary}</p><h2>Keywords</h2><p>${data.keywords.join(', ')}</p>`;
+                        break;
+                    case 'current_time':
+                        console.log('Current time:', data.time);
+                        break;
+                    case 'error':
+                        console.error('Error from server:', data.message);
+                        break;
+                    default:
+                        console.log('Unhandled message type:', data.type);
+                }
+            };
+
+            socket.onclose = function(e) {
+                console.log('WebSocket connection closed. Reconnecting...');
+                setTimeout(connectWebSocket, 1000);  // 1초 후 재연결 시도
+            };
+        
+            socket.onerror = function(err) {
+                console.error('WebSocket encountered an error: ', err.message);
+                socket.close();
+            };
+        }
+
+        function playAudio(path) {
+            audioPlayer.src = path;
+            audioPlayer.style.display = 'block';
+            audioPlayer.play().catch(e => console.error('Audio playback failed:', e));
+        }
+
+        // 페이지 로드시 WebSocket 연결
+        connectWebSocket();
+
+        document.getElementById('startCall').onclick = async function() {
+            if (socket.readyState !== WebSocket.OPEN) {
+                console.log('WebSocket is not open. Reconnecting...');
+                connectWebSocket();
+            }
+
+            try {
+                mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                audioContext = new AudioContext();
+                sourceNode = audioContext.createMediaStreamSource(mediaStream);
+                processorNode = audioContext.createScriptProcessor(1024, 1, 1);
+
+                sourceNode.connect(processorNode);
+                processorNode.connect(audioContext.destination);
+
+                processorNode.onaudioprocess = function(e) {
+                    const inputData = e.inputBuffer.getChannelData(0);
+                    const outputData = new Int16Array(inputData.length);
+                    for (let i = 0; i < inputData.length; i++) {
+                        const s = Math.max(-1, Math.min(1, inputData[i]));
+                        outputData[i] = s < 0 ? s * 0x8000 : s * 0x7fff;
+                    }
+                    socket.send(JSON.stringify({
+                        type: 'audio',
+                        data: Array.from(outputData)
+                    }));
+                };
+
+                document.getElementById('startCall').disabled = true;
+                document.getElementById('stopCall').disabled = false;
+            } catch (error) {
+                console.error('Error accessing microphone:', error);
+            }
+        };
+
+        document.getElementById('stopCall').onclick = function() {
+            if (mediaStream) {
+                mediaStream.getTracks().forEach(track => track.stop());
+            }
+            if (audioContext) {
+                audioContext.close();
+                audioContext = null;
+            }
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                socket.close();
+            }
+            document.getElementById('startCall').disabled = false;
+            document.getElementById('stopCall').disabled = true;
+            audioPlayer.style.display = 'none';
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+voss/env
+.env.dev
+./.env.dev
+/.env.dev
+*.pyc
+calls
+*.json
+media
+__pycache__/
+*.pyc
+./.idea
+/.idea
+0002_initial.py
