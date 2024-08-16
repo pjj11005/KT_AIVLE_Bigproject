@@ -1,0 +1,42 @@
+$colors: (
+  primary: var(--primary),
+  secondary: var(--secondary),
+  gray: var(--gray-400),
+);
+
+.nameWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  &.small {
+    h2 {
+      font-size: 12px;
+    }
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.medium {
+    h2 {
+      font-size: 16px;
+    }
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &.large {
+    h2 {
+      font-size: 30px;
+    }
+    img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}

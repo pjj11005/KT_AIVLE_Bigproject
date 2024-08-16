@@ -1,0 +1,36 @@
+.RegisterWrapper {
+  width: 353px;
+  height: 379px;
+  border-radius: 30px;
+  background-color: #f5f5dc;
+  display: flex;
+  justify-content: center;
+}
+.RegisterBox {
+  margin-top: 40px;
+  width: 305px;
+}
+
+.RegisterBox h2 {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
+.setBox {
+  color: #adadad;
+  margin-bottom: 15px;
+}
+.setBox label {
+  font-size: 14px;
+}
+.setBox input {
+  font-size: 1rem;
+  margin-top: 8px;
+}
+.registBtn {
+  margin-top: 38px;
+  display: flex;
+  justify-content: center;
+}

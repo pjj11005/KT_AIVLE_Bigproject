@@ -1,0 +1,233 @@
+$base-color: #808080;
+.gnb-wrapper {
+  width: 100%;
+  margin-top: 1.25em;
+  position: relative;
+}
+
+.container {
+  width: calc(100% - 4rem);
+  height: 6rem;
+
+  padding: 0 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.gnb-left-container {
+  display: flex;
+  align-items: end;
+  h2 {
+    font-weight: 600;
+    font-size: 4rem;
+    margin-right: 1rem;
+  }
+  .user-state {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 13rem;
+    height: 3rem;
+    box-sizing: border-box;
+    border: 1px solid #8a8a8a;
+    border-radius: 50px;
+    .state-button-container {
+      display: flex;
+      border-radius: 15px;
+      height: 30px;
+      overflow: hidden;
+      width: auto;
+    }
+
+    .state-button {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      padding: 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+
+      &.working {
+        background-color: #4caf50;
+      }
+      &.resting {
+        background-color: #ffc107;
+      }
+      &.off {
+        background-color: #f44336;
+      }
+
+      &.active {
+        width: 100px;
+      }
+
+      span {
+        display: none;
+        color: white;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      &.active span {
+        display: block;
+      }
+    }
+  }
+}
+
+.gnb-right-container {
+  display: flex;
+  width: auto;
+
+  .icon {
+    box-sizing: border-box;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 5.5rem;
+    height: 4rem;
+    position: relative;
+
+    background-color: white;
+    border: 0.2px solid #8a8a8a;
+
+    &:hover {
+      background: #f1f1f1;
+    }
+  }
+
+  .icon-active {
+    background: #f1f1f1;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 1rem);
+    height: 4rem;
+    margin-left: 24px;
+    padding: 0 1rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    background-color: white;
+    border: 0.2px solid #8a8a8a;
+    align-items: center;
+
+    & img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50px;
+      border: 0.5px solid gray;
+    }
+
+    & span {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.alarm-container {
+  position: absolute;
+  border-radius: 1rem;
+  top: 84%;
+  width: 420px;
+  height: 70vh;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 5px;
+
+  & .alarm-top {
+    width: calc(100% - 2rem);
+    height: calc(62px - 2rem);
+    background-color: lighten($base-color, 40%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    position: relative;
+
+    & h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    & i {
+      position: absolute;
+      right: 1rem;
+    }
+
+    & i:hover {
+      cursor: pointer;
+    }
+  }
+
+  & .alarm-content {
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - calc(62px + 2rem));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    & ul {
+      width: 100%;
+      box-sizing: border-box;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & a {
+        width: 95%;
+
+        & li {
+          width: 100%;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    }
+  }
+}
+
+.alarm {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

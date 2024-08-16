@@ -1,0 +1,235 @@
+.container {
+  width: 80%;
+  height: 85%;
+  border-radius: 1rem;
+  background: var(--white);
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.title-container {
+  width: calc(100% - 3rem);
+  height: 60px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid #e0e0e0;
+
+  i {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #666;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+
+.content-container {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  height: calc(100% - 60px);
+}
+
+.client-info-container {
+  width: 20%;
+  padding: 1.5rem;
+  border-right: 1px solid #e0e0e0;
+
+  h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  ul {
+    li {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+
+      span {
+        font-weight: bold;
+        color: #555;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.history-container {
+  width: 80%;
+  padding: 1.5rem;
+
+  .history-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+  }
+}
+
+.history-inner-container {
+  height: calc(100% - 3rem);
+  overflow-y: auto;
+  padding-right: 1rem;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.history-card {
+  background: #f9f9f9;
+  border-radius: 25px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  .top {
+    height: 2rem;
+    background: var(--primary);
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  .manager-box {
+    display: flex;
+    padding: 1rem;
+    background: #fff;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .manager-info {
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      div {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: #555;
+
+        &:first-child {
+          font-size: 1.1rem;
+          font-weight: bold;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .consultant-box {
+    padding: 1rem;
+    border-radius: 0 0 25px 25px;
+    .summary {
+      border: 2px solid rgb(181, 179, 179);
+      padding: 20px;
+      border-radius: 25px;
+    }
+
+    .category,
+    .summary {
+      margin-bottom: 1.5rem;
+
+      .title {
+        font-size: 1.1rem;
+        color: var(--primary);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .all-content {
+        min-height: 6rem;
+        max-height: 14rem;
+        height: 100%;
+        overflow-y: auto;
+      }
+      .summary-content,
+      div:not(.title) {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #666;
+        overflow-y: auto;
+      }
+    }
+    .all-content {
+      font-family: Arial, sans-serif;
+      overflow-y: auto;
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .message {
+      clear: both;
+    }
+    .bubble {
+      padding: 10px 15px;
+      border-radius: 20px;
+
+      position: relative;
+      display: inline-block;
+    }
+    .time {
+      font-size: 0.75em;
+      color: #888;
+      margin-top: 5px;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 0.8rem;
+    }
+    .counselor {
+      display: flex;
+      flex-direction: column;
+      float: right;
+      align-items: flex-end;
+      width: 100%;
+    }
+    .counselor .bubble {
+      max-width: 70%;
+      background-color: #dcf8c6;
+    }
+    .client {
+      float: left;
+    }
+    .client .bubble {
+      background-color: #e5e5ea;
+    }
+  }
+}

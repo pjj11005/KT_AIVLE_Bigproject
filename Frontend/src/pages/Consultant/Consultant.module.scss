@@ -1,0 +1,84 @@
+.table-top {
+  & th {
+    background: color-mix(in srgb, var(--primary) 90%, transparent);
+    color: var(--white);
+    font-weight: bold;
+    height: 40px;
+    padding: 0 10px;
+    line-height: 50px;
+  }
+}
+
+.item {
+  height: 40px;
+  transition: background-color 0.3s ease;
+
+  & td {
+    border-bottom: 0.5px solid var(--primary);
+    vertical-align: middle;
+    height: 40px;
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:hover {
+    background-color: var(--gray-200);
+    cursor: pointer;
+
+    & td {
+      color: var(--primary);
+    }
+  }
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.title-container {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary);
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--primary);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 11rem;
+    height: 4px;
+    background-color: #5a67d8;
+  }
+}
+
+.table {
+  --col-name-width: 15%;
+  --col-position-width: 10%;
+  --col-id-width: 15%;
+  --col-email-width: 35%;
+  --col-phone-width: 25%;
+}
+
+.col-name {
+  width: var(--col-name-width);
+}
+.col-position {
+  width: var(--col-position-width);
+}
+.col-id {
+  width: var(--col-id-width);
+}
+.col-email {
+  width: var(--col-email-width);
+}
+.col-phone {
+  width: var(--col-phone-width);
+}

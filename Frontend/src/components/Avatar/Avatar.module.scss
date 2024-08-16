@@ -1,0 +1,52 @@
+$sizes: (
+        s: 28px,
+        m: 2rem,
+        l: 3rem
+);
+
+.container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--whitesmoke);
+
+  @each $size, $value in $sizes {
+    &.#{$size} {
+      width: $value;
+      height: $value;
+      font-size: $value * 0.5;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .initials {
+    color: var(--white);
+    font-weight: bold;
+  }
+
+  .status {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    border: 2px solid var(--black);
+    box-shadow: 0 0 0 1px var(--white);
+
+    &.online {
+      background-color: var(--green-500);
+    }
+
+    &.offline {
+      background-color: var(--red-500);
+    }
+  }
+}

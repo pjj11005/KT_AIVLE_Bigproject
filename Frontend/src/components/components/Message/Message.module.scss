@@ -1,0 +1,37 @@
+.messageWrapper {
+  display: flex;
+  margin: 5px 0.5rem;
+  max-width: calc(100% - 1rem);
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 20px;
+  word-wrap: break-word;
+  display: inline-block;
+  max-width: 50%;
+
+  p {
+    margin: 0;
+  }
+}
+
+.me {
+  justify-content: flex-end;
+
+  .message {
+    background-color: #25d366;
+    color: white;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+.other {
+  justify-content: flex-start;
+
+  .message {
+    background-color: white;
+    color: black;
+    border-bottom-left-radius: 5px;
+  }
+}

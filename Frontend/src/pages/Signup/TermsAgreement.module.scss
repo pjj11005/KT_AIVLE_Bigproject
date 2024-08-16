@@ -1,0 +1,154 @@
+$primary-color: var(--primary);
+$secondary-color: #2d2c6d;
+$background-color: #f0f0f7;
+$error-color: #ff3b30;
+
+.container {
+  flex-direction: column;
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  overflow-y: auto;
+  background-color: #f5f5dc;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  img {
+    margin-left: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+  }
+}
+
+.agreementBox {
+  background: white;
+  padding: 2.5rem;
+  padding-bottom: 2.5rem;
+  padding-top: 1.5px;
+  padding-bottom: 1.5rem;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(27, 26, 63, 0.1);
+  width: 800px;
+  max-width: 1000px;
+}
+
+.title {
+  margin-top: 2rem;
+
+  color: $primary-color;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.join_box {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkBox {
+  margin-bottom: 1.5rem;
+}
+.clearfix {
+  display: flex;
+}
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.checkBox ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkBox li {
+  float: left;
+}
+
+.chkAll {
+  margin-top: 5px;
+  margin-left: 13px;
+  width: 15px;
+  height: 15px;
+  transform: scale(1.5);
+}
+
+.checkAllBtn,
+.checkBtn {
+  width: 50px;
+  height: 20px;
+  transform: scale(1.5);
+  margin-left: 1.5rem;
+}
+
+textarea {
+  width: 95%;
+  height: 100px;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  resize: none;
+  transition: border-color 0.3s ease;
+  background-color: #f9f9f9;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
+}
+
+.footBtwrap {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.footBtwrap li {
+  margin-right: 1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.fpmgBt2 {
+  margin-bottom: 10px;
+  background-color: #34c759;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover:not(:disabled) {
+    background-color: $secondary-color;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.logo {
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+  .agreementBox {
+    padding: 2rem;
+  }
+}

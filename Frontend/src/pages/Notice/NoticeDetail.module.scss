@@ -1,0 +1,113 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 154px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.container-box {
+  width: calc(95% - 2rem);
+  border-radius: 1rem;
+  background: var(--gray-100);
+  padding: 1rem;
+
+  overflow: hidden;
+}
+
+.title-container {
+  width: calc(95% - 1rem);
+  height: 4rem;
+  margin-bottom: 1rem;
+
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  .btns {
+    width: calc(110px * 3);
+    height: 65%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    button {
+      border: 2px solid #e5e4e4;
+      height: 100%;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      & :hover {
+        background-color: #e5e4e4;
+      }
+    }
+  }
+
+  & div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    & span {
+      font-size: 1.125em;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+
+  & h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary);
+  }
+}
+
+.title-name-container {
+  width: auto;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 0.5rem;
+  background-color: white;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.content-container {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  scrollbar-color: var(--primary) #f1f1f1;
+
+  .contents {
+    width: calc(100% - 22px);
+    height: calc(100% - 40px);
+    background-color: white;
+    font-size: 1.25rem;
+    padding: 20px 10px;
+    border-radius: 0.5rem;
+    overflow-y: auto;
+  }
+}
+
+.content-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.content-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.content-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 5px;
+}

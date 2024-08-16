@@ -1,0 +1,67 @@
+:root {
+  --gray-300-rgb: 77, 77, 77;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(var(--gray-300-rgb), 0.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 320px;
+  height: 200px;
+  border-radius: 12px;
+  background-color: var(--whitesmoke);
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+  }
+
+  & button {
+    width: 72px;
+    height: 72px;
+    border-radius: 50px;
+    border: 1px solid var(--whitesmoke);
+  }
+
+  & button:hover {
+    cursor: pointer;
+  }
+}
+
+.call-number {
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

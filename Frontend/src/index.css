@@ -1,0 +1,400 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: calc(16px + 0.390625vw);
+  }
+}
+
+video {
+  object-fit: revert;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+:root {
+  --black: #000000;
+  --whitesmoke: #fafafa;
+  --primary: #2E3141;
+  --secondary: #00704A;
+  --primary-dark: #15143A;
+  --gray-light: #D3D3D3;
+  --gray: #808080;
+
+  --button-lighten-filter: brightness(150%);
+  --button-darken-filter: brightness(80%);
+
+  /*gray*/
+  --gray-100: #f3f4f6;
+  --gray-200: #dcdcdc;
+  --gray-300: #bababa;
+  --gray-400: #a6a6ad;
+  --gray-500: #898994;
+  --gray-600: #6c6d7c;
+  --gray-700: #515363;
+  --gray-800: #393b4b;
+  --gray-900: #232532;
+
+  /*red*/
+  --red-100: #ffefef;
+  --red-200: #ffbdbd;
+  --red-300: #ff9292;
+  --red-400: #ff6d6d;
+  --red-500: #ff2c2c;
+  --red-600: #ef0000;
+  --red-700: #bf0000;
+  --red-800: #920000;
+  --red-900: #700000;
+
+  /*Burgundy*/
+  --burgundy-100: #fcf1f0;
+  --burgundy-200: #f6c3c1;
+  --burgundy-300: #f19895;
+  --burgundy-400: #ed746f;
+  --burgundy-500: #d8534d;
+  --burgundy-600: #bd3c36;
+  --burgundy-700: #9f2b23;
+  --burgundy-800: #7e1e18;
+  --burgundy-900: #5d1510;
+
+  /*Coral*/
+  --coral-100: #fcf1ed;
+  --coral-200: #f9d6ca;
+  --coral-300: #f4b8a3;
+  --coral-400: #f0997d;
+  --coral-500: #da7656;
+  --coral-600: #bc5735;
+  --coral-700: #9a3a1c;
+  --coral-800: #73280f;
+  --coral-900: #521e08;
+
+  /* Yellow */
+  --yellow-100: #fefae8;
+  --yellow-200: #fdf3b0;
+  --yellow-300: #fbea7d;
+  --yellow-400: #f9de57;
+  --yellow-500: #f7d047;
+  --yellow-600: #d2b03a;
+  --yellow-700: #a68a2c;
+  --yellow-800: #77631d;
+  --yellow-900: #4a3e0f;
+
+  /*Green*/
+  --green-100: #fafcea;
+  --green-200: #ebf8bf;
+  --green-300: #d4f096;
+  --green-400: #b8e376;
+  --green-500: #98d05c;
+  --green-600: #76b548;
+  --green-700: #608f32;
+  --green-800: #436620;
+  --green-900: #2a3f11;
+
+  /*Blue*/
+  --blue-100: #f4f7fb;
+  --blue-200: #e3f1fe;
+  --blue-300: #bddefc;
+  --blue-400: #95c6fa;
+  --blue-500: #63a5f1;
+  --blue-600: #377cde;
+  --blue-700: #2960b2;
+  --blue-800: #1b4582;
+  --blue-900: #0f2c56;
+
+  /*Violet*/
+  --violet-100: #f8f8fc;
+  --violet-200: #d8d7f6;
+  --violet-300: #b6afe8;
+  --violet-400: #877cd0;
+  --violet-500: #785ecb;
+  --violet-600: #603aae;
+  --violet-700: #432687;
+  --violet-800: #30166c;
+  --violet-900: #281162;
+
+  /*Indigo*/
+  --indigo-100: #ecf3fe;
+  --indigo-200: #cadefd;
+  --indigo-300: #a5bff7;
+  --indigo-400: #859bee;
+  --indigo-500: #6475db;
+  --indigo-600: #4951c1;
+  --indigo-700: #392983;
+  --indigo-800: #3833a2;
+  --indigo-900: #301c62;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+
+  /*gray*/
+  --gray-100: #f3f4f6;
+  --gray-200: #dcdcdc;
+  --gray-300: #bababa;
+  --gray-400: #a6a6ad;
+  --gray-500: #898994;
+  --gray-600: #6c6d7c;
+  --gray-700: #515363;
+  --gray-800: #393b4b;
+  --gray-900: #232532;
+
+  /*red*/
+  --red-100: #ffefef;
+  --red-200: #ffbdbd;
+  --red-300: #ff9292;
+  --red-400: #ff6d6d;
+  --red-500: #ff2c2c;
+  --red-600: #ef0000;
+  --red-700: #bf0000;
+  --red-800: #920000;
+  --red-900: #700000;
+
+  /*Burgundy*/
+  --burgundy-100: #fcf1f0;
+  --burgundy-200: #f6c3c1;
+  --burgundy-300: #f19895;
+  --burgundy-400: #ed746f;
+  --burgundy-500: #d8534d;
+  --burgundy-600: #bd3c36;
+  --burgundy-700: #9f2b23;
+  --burgundy-800: #7e1e18;
+  --burgundy-900: #5d1510;
+
+  /*Coral*/
+  --coral-100: #fcf1ed;
+  --coral-200: #f9d6ca;
+  --coral-300: #f4b8a3;
+  --coral-400: #f0997d;
+  --coral-500: #da7656;
+  --coral-600: #bc5735;
+  --coral-700: #9a3a1c;
+  --coral-800: #73280f;
+  --coral-900: #521e08;
+
+  /*Yelllow*/
+  --yellow-100: #fefae8;
+  --yellow-200: #fdf3b0;
+  --yellow-300: #fbea7d;
+  --yellow-400: #f9de57;
+  --yellow-500: #f7d047;
+  --yellow-600: #d2b03a;
+  --yellow-700: #a68a2c;
+  --yellow-800: #77631d;
+  --yellow-900: #4a3e0f;
+
+  /*Green*/
+  --green-100: #fafcea;
+  --green-200: #ebf8bf;
+  --green-300: #d4f096;
+  --green-400: #b8e376;
+  --green-500: #98d05c;
+  --green-600: #76b548;
+  --green-700: #608f32;
+  --green-800: #436620;
+  --green-900: #2a3f11;
+
+  /*Blue*/
+  --blue-100: #f4f7fb;
+  --blue-200: #e3f1fe;
+  --blue-300: #bddefc;
+  --blue-400: #95c6fa;
+  --blue-500: #63a5f1;
+  --blue-600: #377cde;
+  --blue-700: #2960b2;
+  --blue-800: #1b4582;
+  --blue-900: #0f2c56;
+
+  /*Violet*/
+  --violet-100: #f8f8fc;
+  --violet-200: #d8d7f6;
+  --violet-300: #b6afe8;
+  --violet-400: #877cd0;
+  --violet-500: #785ecb;
+  --violet-600: #603aae;
+  --violet-700: #432687;
+  --violet-800: #30166c;
+  --violet-900: #281162;
+
+  /*Indigo*/
+  --indigo-100: #ecf3fe;
+  --indigo-200: #cadefd;
+  --indigo-300: #a5bff7;
+  --indigo-400: #859bee;
+  --indigo-500: #6475db;
+  --indigo-600: #4951c1;
+  --indigo-700: #392983;
+  --indigo-800: #3833a2;
+  --indigo-900: #301c62;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  background-color: black;
+
+  color: var(--gray-100);
+}
+
+.icon {
+  width: 54px;
+  height: 54px;
+  padding: 12px;
+}
+
+.renderImg {
+  width: 100vw;
+  height: 100vh;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Nanum+Gothic:wght@700&family=Nanum+Pen+Script&display=swap');
+
+.overlay {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.overlay h1 {
+  font-size: 58px;
+  letter-spacing: 0px;
+  margin: 200px 0 5px;
+  font-family: 'Kalam', sans-serif;
+}
+
+.overlay p {
+  margin: 0;
+  font-family: 'Nanum Pen Script', sans-serif;
+  font-size: 30px;
+}
+
+.fade-In {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.video-render {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.fadein {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+.close-icon {
+  width: 30px;
+  height: 30px;
+
+  position: absolute;
+  right: 0;
+  margin: 5px;
+}
+
+
+body {
+
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

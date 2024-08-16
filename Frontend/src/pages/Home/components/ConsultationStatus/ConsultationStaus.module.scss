@@ -1,0 +1,61 @@
+.consultation-stats {
+  .call-counts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    h3 {
+      font-size: 1.4rem;
+      color: #4a4a8a;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .count-item {
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .label {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: var(--primary);
+        margin-right: 10px;
+      }
+
+      .count {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--primary);
+      }
+    }
+  }
+
+  .category-chart {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .chart-container {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .recharts-default-legend {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .recharts-legend-item {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+      }
+    }
+  }
+}

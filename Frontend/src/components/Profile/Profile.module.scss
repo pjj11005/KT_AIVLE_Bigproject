@@ -1,0 +1,65 @@
+$colors: (
+  primary: var(--primary),
+  gray: #f7f7f7,
+);
+
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 262px;
+  height: 289px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: map-get($colors, gray);
+  position: relative;
+
+  img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+  }
+
+  h2 {
+    margin-top: 24px;
+    font-weight: 600;
+    font-size: 16px;
+    color: map-get($colors, primary);
+  }
+
+  h3 {
+    margin-top: 8px;
+    font-weight: 300;
+    font-size: 14px;
+    color: map-get($colors, primary);
+  }
+
+  h4 {
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 12px;
+    color: map-get($colors, primary);
+  }
+
+  .status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--white);
+
+    &.online {
+      background-color: var(--green-500);
+    }
+
+    &.offline {
+      background-color: var(--red-500);
+    }
+  }
+}

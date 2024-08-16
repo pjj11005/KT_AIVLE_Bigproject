@@ -1,0 +1,28 @@
+.alarm-container {
+  width: 90%;
+  height: auto;
+  padding: 20px 0;
+  margin-bottom: 0.75rem;
+
+  border-bottom: 1px solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & .date {
+    color: var(--gray-400);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  & .content {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--gray-600);
+  }
+
+  &:hover {
+    background: var(--gray-100);
+    cursor: pointer;
+  }
+}

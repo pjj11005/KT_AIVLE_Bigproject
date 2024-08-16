@@ -1,0 +1,142 @@
+.container {
+  width: calc(100% - 4em);
+  height: calc(100% - calc(38px + 1rem));
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  font-family: 'Inter', sans-serif;
+}
+.mac-title {
+  width: 100%;
+  height: 4rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.mac-lists {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  color: black;
+}
+.inner-container {
+  background: #f0f0f0;
+  box-sizing: border-box;
+  border: 1px solid #8a8a8a;
+  width: calc(50% - 2rem);
+  height: calc(100% - 18px);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+
+  & .title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    & h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: black;
+    }
+  }
+}
+
+.user-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      background-color: var(--primary);
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+
+      &.delete {
+        background-color: #ff4d4f;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+      }
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

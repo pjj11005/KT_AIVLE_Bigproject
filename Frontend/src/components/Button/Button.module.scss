@@ -1,0 +1,86 @@
+$colors: (
+  primary: var(--primary),
+  secondary: var(--secondary),
+  gray: var(--gray-400),
+);
+
+@mixin button-style($type, $color) {
+  @if $type == 'all' {
+    background-color: map-get($colors, $color);
+    color: var(--white);
+    border: 1px solid map-get($colors, $color);
+
+    @if map-get($colors, $color) == var(--gray-400) {
+      &:hover {
+        background: var(--gray-600);
+      }
+    } @else {
+      &:hover {
+        filter: var(--button-lighten-filter);
+      }
+    }
+
+    &:active {
+      filter: var(--button-darken-filter);
+    }
+  } @else if $type == 'side' {
+    background-color: var(--white);
+    color: map-get($colors, $color);
+    border: 2px solid map-get($colors, $color);
+
+    &:hover {
+      background-color: map-get($colors, $color);
+      color: var(--white);
+      border-color: map-get($colors, $color);
+    }
+
+    &:active {
+      background-color: map-get($colors, $color);
+      color: var(--white);
+      border-color: map-get($colors, $color);
+      filter: var(--button-darken-filter);
+    }
+  }
+}
+
+.buttonWrapper {
+  box-sizing: border-box;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.large {
+    min-width: 120px;
+    width: 200px;
+    height: 48px;
+    font-size: 1.6rem;
+  }
+
+  &.medium {
+    min-width: 96px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  &.small {
+    min-width: 52px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  @each $color in map-keys($colors) {
+    &.all-#{$color} {
+      @include button-style('all', $color);
+    }
+
+    &.side-#{$color} {
+      @include button-style('side', $color);
+    }
+  }
+}
+
+.disabled {
+  background: var(--gray-700);
+  color: var(--white);
+  cursor: default;
+}

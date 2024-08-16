@@ -1,0 +1,19 @@
+.stacked-bar-chart {
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    stroke: #e0e0e0;
+  }
+
+  .recharts-xAxis .recharts-cartesian-axis-tick-value,
+  .recharts-yAxis .recharts-cartesian-axis-tick-value {
+    fill: #757575;
+  }
+
+  .recharts-tooltip-wrapper {
+    .recharts-default-tooltip {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      border: 1px solid #e0e0e0 !important;
+      border-radius: 4px;
+    }
+  }
+}
